@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Feed LinkedIn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-area">
+        <span class="shield-logo">🛡️</span>
+        <div class="title-desc">
+          <h1>Safe Feed</h1>
+          <p>LinkedIn Shield</p>
+        </div>
+      </div>
+      <div class="main-toggle-wrapper">
+        <label class="switch">
+          <input type="checkbox" id="main-toggle" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
+
+    <!-- Stats Panel -->
+    <section class="stats-panel">
+      <div class="stats-bg-glow"></div>
+      <div class="stat-box">
+        <span class="stat-number" id="stats-count">0</span>
+        <span class="stat-label">Posts Shielded</span>
+      </div>
+    </section>
+
+    <!-- Filter Settings -->
+    <section class="section">
+      <h3 class="section-title">Quick Country Filters</h3>
+      
+      <div class="filter-item">
+        <div class="filter-info">
+          <span class="flag-icon">🇮🇳</span>
+          <div class="filter-text">
+            <span class="filter-name">Filter India</span>
+            <span class="filter-desc">Filter posts, demonyms, cities & states</span>
+          </div>
+        </div>
+        <label class="switch-small">
+          <input type="checkbox" id="india-toggle" checked>
+          <span class="slider-small round"></span>
+        </label>
+      </div>
+
+      <div class="filter-item">
+        <div class="filter-info">
+          <span class="flag-icon">🇵🇰</span>
+          <div class="filter-text">
+            <span class="filter-name">Filter Pakistan</span>
+            <span class="filter-desc">Filter posts, demonyms, cities & provinces</span>
+          </div>
+        </div>
+        <label class="switch-small">
+          <input type="checkbox" id="pakistan-toggle" checked>
+          <span class="slider-small round"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Quick Add Keyword -->
+    <section class="section">
+      <h3 class="section-title">Quick Add Keyword</h3>
+      <form id="quick-add-form" class="quick-add-form">
+        <input type="text" id="quick-keyword-input" placeholder="e.g. Noida, scam, hiring..." required>
+        <button type="submit" class="btn-add">Add</button>
+      </form>
+    </section>
+
+    <!-- Footer Actions -->
+    <footer class="footer">
+      <button id="open-settings-btn" class="btn-link">
+        <span>⚙️</span> Advanced Settings
+      </button>
+      <button id="reset-counter-btn" class="btn-reset" title="Reset Counter">
+        🔄 Reset
+      </button>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

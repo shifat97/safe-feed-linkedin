@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Feed LinkedIn - Advanced Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="logo">🛡️</span>
+        <div class="brand-text">
+          <h2>Safe Feed</h2>
+          <span>LinkedIn Shield</span>
+        </div>
+      </div>
+
+      <div class="sidebar-stats">
+        <div class="sidebar-stat-card">
+          <span class="stat-value" id="total-blocked-badge">0</span>
+          <span class="stat-label">Total Shielded Posts</span>
+        </div>
+      </div>
+
+      <div class="stats-breakdown-section">
+        <h3>Keyword Block Stats</h3>
+        <p class="stats-desc">Frequencies of blocked terms:</p>
+        <div id="stats-list" class="stats-list">
+          <div class="empty-stats">No blocks logged yet. Keep browsing!</div>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <p>Safe Feed LinkedIn v1.0.0</p>
+        <button id="reset-all-btn" class="btn-secondary-reset">Reset Stats & Config</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="main-header">
+        <h1>Shield Configurations</h1>
+        <p>Customize the keywords, locations, and regions you want to block from your feed.</p>
+      </header>
+
+      <!-- Custom Keywords -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title-icon">
+            <span class="card-icon">✏️</span>
+            <div>
+              <h2>Custom Blocked Keywords</h2>
+              <p>Add specific locations, names, keywords, or phrases you wish to completely filter out.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form id="add-keyword-form" class="add-keyword-form">
+            <input type="text" id="keyword-input" placeholder="e.g. Pune, Chennai, hire, agency" required autocomplete="off">
+            <button type="submit" class="btn-primary">Add Keyword</button>
+          </form>
+
+          <div class="keyword-tags-container">
+            <h3>Active Custom Keywords</h3>
+            <div id="custom-tags-list" class="tags-list">
+              <!-- Dynamically populated tags -->
+              <span class="no-tags">No custom keywords added yet. Add one above!</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Default Country Lists -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title-icon">
+            <span class="card-icon">🌍</span>
+            <div>
+              <h2>Pre-configured Country Feeds</h2>
+              <p>Quick toggle the extensive pre-seeded database of cities, states, and demonyms.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="grid-columns">
+            <!-- India Panel -->
+            <div class="country-panel">
+              <div class="country-header">
+                <div class="country-info">
+                  <span class="country-flag">🇮🇳</span>
+                  <div>
+                    <h3>India Database</h3>
+                    <span class="keyword-count" id="india-count-badge">0 keywords</span>
+                  </div>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="india-db-toggle" checked>
+                  <span class="slider round"></span>
+                </label>
+              </div>
+              <div class="search-wrapper">
+                <input type="text" id="india-search" placeholder="Search India database..." class="search-input">
+              </div>
+              <div class="keyword-list-viewer" id="india-keywords-list">
+                <!-- Dynamically filled -->
+              </div>
+            </div>
+
+            <!-- Pakistan Panel -->
+            <div class="country-panel">
+              <div class="country-header">
+                <div class="country-info">
+                  <span class="country-flag">🇵🇰</span>
+                  <div>
+                    <h3>Pakistan Database</h3>
+                    <span class="keyword-count" id="pakistan-count-badge">0 keywords</span>
+                  </div>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="pakistan-db-toggle" checked>
+                  <span class="slider round"></span>
+                </label>
+              </div>
+              <div class="search-wrapper">
+                <input type="text" id="pakistan-search" placeholder="Search Pakistan database..." class="search-input">
+              </div>
+              <div class="keyword-list-viewer" id="pakistan-keywords-list">
+                <!-- Dynamically filled -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

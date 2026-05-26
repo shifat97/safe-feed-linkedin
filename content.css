@@ -1,0 +1,141 @@
+/* Safe Feed LinkedIn - Injected stylesheet */
+
+.safe-feed-blocked-placeholder {
+  display: block !important;
+  margin: 8px 0;
+  padding: 16px 24px;
+  background: var(--color-background-container, #ffffff);
+  border: 1px solid var(--color-border-low-emphasis, rgba(0, 0, 0, 0.08));
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Adapt for dark theme if active on LinkedIn */
+.theme--dark-inverse .safe-feed-blocked-placeholder,
+.theme--dark .safe-feed-blocked-placeholder,
+html.dark .safe-feed-blocked-placeholder {
+  background: var(--color-background-container, #1d2226);
+  border-color: var(--color-border-low-emphasis, rgba(255, 255, 255, 0.08));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.safe-feed-blocked-placeholder:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  border-color: var(--color-border-low-emphasis-hover, rgba(0, 0, 0, 0.15));
+}
+
+.theme--dark-inverse .safe-feed-blocked-placeholder:hover,
+.theme--dark .safe-feed-blocked-placeholder:hover,
+html.dark .safe-feed-blocked-placeholder:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  border-color: var(--color-border-low-emphasis-hover, rgba(255, 255, 255, 0.15));
+}
+
+.sf-placeholder-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.sf-info-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sf-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #ff4757;
+  animation: sf-pulse 2s infinite;
+  background: rgba(255, 71, 87, 0.1);
+  padding: 8px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.theme--dark-inverse .sf-icon,
+.theme--dark .sf-icon,
+html.dark .sf-icon {
+  background: rgba(255, 71, 87, 0.2);
+}
+
+.sf-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text, #191919);
+  line-height: 1.4;
+}
+
+.sf-text strong {
+  color: #ff4757;
+  font-weight: 600;
+  background: rgba(255, 71, 87, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.theme--dark-inverse .sf-text strong,
+.theme--dark .sf-text strong,
+html.dark .sf-text strong {
+  background: rgba(255, 71, 87, 0.15);
+}
+
+.sf-show-btn {
+  background: transparent;
+  border: 1px solid var(--color-action-secondary-border, #0a66c2);
+  color: var(--color-action-secondary-text, #0a66c2);
+  padding: 6px 16px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.sf-show-btn:hover {
+  background: var(--color-action-secondary-background-hover, rgba(10, 102, 194, 0.04));
+  border-color: var(--color-action-secondary-border-hover, #004182);
+  color: var(--color-action-secondary-text-hover, #004182);
+}
+
+.theme--dark-inverse .sf-show-btn,
+.theme--dark .sf-show-btn,
+html.dark .sf-show-btn {
+  border-color: var(--color-action-secondary-border, #70b5f9);
+  color: var(--color-action-secondary-text, #70b5f9);
+}
+
+.theme--dark-inverse .sf-show-btn:hover,
+.theme--dark .sf-show-btn:hover,
+html.dark .sf-show-btn:hover {
+  background: var(--color-action-secondary-background-hover, rgba(112, 181, 249, 0.08));
+  border-color: var(--color-action-secondary-border-hover, #a8d4ff);
+  color: var(--color-action-secondary-text-hover, #a8d4ff);
+}
+
+@keyframes sf-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.2);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 6px rgba(255, 71, 87, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
+  }
+}
